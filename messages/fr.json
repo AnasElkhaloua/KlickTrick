@@ -1,0 +1,309 @@
+{
+  "Metadata": {
+    "title": "Klick Trick | Agence digitale au Maroc",
+    "description": "Klick Trick accompagne les entreprises marocaines avec une approche digitale qui réunit stratégie, créativité, technologie et performance.",
+    "homeTitle": "Agence digitale au Maroc",
+    "servicesTitle": "Services digitaux pour entreprises au Maroc",
+    "servicesDescription": "Marketing, branding, web, réseaux sociaux, IA et analytics : découvrez les six expertises intégrées de Klick Trick au Maroc.",
+    "aboutTitle": "À propos de notre agence digitale marocaine",
+    "aboutDescription": "Découvrez la mission, l’approche collaborative et le positionnement créatif et technologique de Klick Trick au Maroc.",
+    "contactTitle": "Contactez notre agence digitale au Maroc",
+    "contactDescription": "Présentez votre projet à Klick Trick ou contactez-nous sur WhatsApp pour discuter de votre prochaine étape digitale."
+  },
+  "Navigation": {
+    "home": "Accueil",
+    "services": "Services",
+    "about": "À propos",
+    "contact": "Contact",
+    "quote": "Demander un devis gratuit",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "primaryNavigation": "Navigation principale",
+    "mobileNavigation": "Navigation mobile",
+    "language": "Langue"
+  },
+  "Home": {
+    "hero": {
+      "eyebrow": "Agence digitale full-service au Maroc",
+      "title": "Une agence. Toutes vos ambitions digitales.",
+      "description": "Klick Trick accompagne les entreprises marocaines avec une approche qui réunit stratégie, créativité, technologie et croissance durable.",
+      "primaryCta": "Demander un devis gratuit",
+      "secondaryCta": "Découvrir nos services",
+      "visualLabel": "Composition abstraite illustrant la créativité, la technologie et la croissance digitale"
+    },
+    "services": {
+      "eyebrow": "Nos expertises",
+      "title": "Six expertises. Une seule vision digitale.",
+      "description": "De la stratégie à l’exécution, nous réunissons les compétences utiles pour construire une présence cohérente et faire avancer votre entreprise.",
+      "cardCta": "Découvrir l’expertise",
+      "allCta": "Explorer tous nos services",
+      "items": {
+        "digitalMarketing": {"title": "Marketing digital", "description": "SEO, publicité, contenu et acquisition pensés autour de vos objectifs et de votre marché."},
+        "brandingCreative": {"title": "Branding & Création", "description": "Une identité claire et des créations distinctives pour rendre votre marque reconnaissable."},
+        "webTechnology": {"title": "Web & Technologie", "description": "Des sites et expériences digitales rapides, accessibles et conçus pour guider l’action."},
+        "socialMedia": {"title": "Réseaux sociaux", "description": "Une présence éditoriale cohérente pour créer des liens utiles avec votre audience."},
+        "aiAutomation": {"title": "IA & Automatisation", "description": "Des systèmes pratiques pour simplifier les tâches, les échanges et les parcours internes."},
+        "strategyAnalytics": {"title": "Stratégie & Analytics", "description": "Des décisions mieux informées grâce à la recherche, au suivi et à une lecture claire des données."}
+      }
+    },
+    "why": {
+      "eyebrow": "Pourquoi Klick Trick",
+      "title": "Une équipe connectée à toute votre ambition.",
+      "description": "Nous relions conseil, création et technologie pour éviter les actions isolées et garder chaque décision alignée sur votre réalité.",
+      "visualStrategy": "Stratégie",
+      "visualExecution": "Exécution",
+      "items": {
+        "integrated": {"title": "Une approche intégrée", "description": "Vos enjeux de marque, d’acquisition et de technologie avancent dans la même direction."},
+        "tailored": {"title": "Des solutions sur mesure", "description": "Nous adaptons le périmètre, le rythme et les priorités à votre entreprise, sans formule générique."},
+        "creative": {"title": "Une créativité utile", "description": "Chaque idée doit servir un message, une expérience ou un objectif clairement défini."},
+        "clear": {"title": "Une communication claire", "description": "Vous savez ce que nous faisons, pourquoi nous le faisons et quelle est la prochaine étape."}
+      }
+    },
+    "process": {
+      "eyebrow": "Notre méthode",
+      "title": "Clairs à chaque étape. Flexibles dans l’exécution.",
+      "description": "Un processus simple pour comprendre, décider, créer et améliorer sans perdre de vue vos priorités.",
+      "steps": {
+        "discovery": {"title": "Découverte", "description": "Nous clarifions votre contexte, vos publics, vos contraintes et l’objectif du projet."},
+        "strategy": {"title": "Stratégie", "description": "Nous définissons les priorités, le parcours et le plan d’action le plus pertinent."},
+        "execution": {"title": "Exécution", "description": "Nous concevons et produisons avec des validations régulières et un cap partagé."},
+        "optimization": {"title": "Optimisation", "description": "Nous analysons les signaux disponibles pour apprendre et ajuster les actions utiles."}
+      }
+    },
+    "audience": {
+      "eyebrow": "Pour qui",
+      "title": "Des besoins différents. Une exigence commune.",
+      "description": "Nous travaillons avec des entreprises qui veulent donner plus de cohérence et d’impact à leur présence digitale.",
+      "items": {
+        "startups": {"title": "Startups", "description": "Structurer une marque, lancer une offre et installer des fondations digitales solides."},
+        "ecommerce": {"title": "E-commerce", "description": "Fluidifier l’expérience, renforcer l’acquisition et mieux comprendre le parcours client."},
+        "professionals": {"title": "Professionnels", "description": "Clarifier votre expertise et transformer votre présence en outil de confiance."},
+        "established": {"title": "Entreprises établies", "description": "Moderniser les expériences et coordonner des initiatives digitales plus ambitieuses."}
+      }
+    },
+    "finalCta": {
+      "eyebrow": "Votre prochaine étape",
+      "title": "Transformons votre ambition en projet clair.",
+      "description": "Parlez-nous de votre entreprise, de votre besoin et de ce que vous souhaitez faire avancer. Nous vous répondrons avec une première orientation adaptée.",
+      "primaryCta": "Demander un devis gratuit"
+    }
+  },
+  "Services": {
+    "hero": {
+      "eyebrow": "Nos services digitaux",
+      "title": "Toutes les expertises pour faire avancer votre présence digitale.",
+      "description": "Klick Trick réunit stratégie, création, marketing et technologie dans un accompagnement cohérent, adapté aux besoins des entreprises au Maroc.",
+      "cta": "Demander un devis gratuit",
+      "visualLabel": "Les six expertises de Klick Trick organisées autour d’une vision digitale commune"
+    },
+    "navigationLabel": "Accéder aux catégories de services",
+    "includesLabel": "Ce service peut inclure",
+    "serviceCta": "Discuter de ce besoin",
+    "items": {
+      "digitalMarketing": {
+        "title": "Marketing digital",
+        "description": "Nous construisons des actions d’acquisition et de visibilité cohérentes avec votre positionnement, vos publics et vos priorités commerciales.",
+        "help": "Une approche structurée pour choisir les bons canaux, produire des messages pertinents et apprendre des signaux disponibles.",
+        "includes": ["SEO et référencement local", "Google Ads et campagnes PPC", "Marketing de contenu", "Email marketing", "Génération de prospects", "Pilotage des campagnes sociales"]
+      },
+      "brandingCreative": {
+        "title": "Branding & Création",
+        "description": "Nous donnons à votre entreprise une expression claire, reconnaissable et adaptée aux contextes où votre marque doit prendre la parole.",
+        "help": "De la réflexion de marque aux supports créatifs, chaque élément est conçu pour renforcer la cohérence de votre communication.",
+        "includes": ["Stratégie de marque", "Création de logo", "Identité visuelle", "Guide de marque", "Design graphique", "Campagnes créatives", "Photo et vidéo"]
+      },
+      "webTechnology": {
+        "title": "Web & Technologie",
+        "description": "Nous concevons des expériences digitales rapides, accessibles et simples à utiliser, avec une base technique adaptée à votre projet.",
+        "help": "Votre site devient un outil utile pour présenter votre offre, faciliter les parcours et soutenir vos actions marketing.",
+        "includes": ["Sites web sur mesure", "E-commerce", "Landing pages", "UI et UX design", "Applications web", "WordPress", "Maintenance et optimisation"]
+      },
+      "socialMedia": {
+        "title": "Réseaux sociaux",
+        "description": "Nous structurons une présence éditoriale régulière et cohérente pour aider votre marque à dialoguer avec ses communautés.",
+        "help": "La stratégie, la création et le suivi sont réunis pour faire des réseaux sociaux un canal piloté plutôt qu’une suite de publications isolées.",
+        "includes": ["Stratégie éditoriale", "Gestion des comptes", "Création de contenu", "Reels et formats courts", "Community management", "Publicité sociale", "Analyse et reporting"]
+      },
+      "aiAutomation": {
+        "title": "IA & Automatisation",
+        "description": "Nous identifions des usages concrets de l’intelligence artificielle et de l’automatisation pour fluidifier les tâches et les échanges.",
+        "help": "Chaque solution part d’un besoin réel, avec une attention portée aux données, au contrôle humain et à l’intégration dans vos outils.",
+        "includes": ["Chatbots IA", "Support client assisté", "Automatisation marketing", "Automatisation CRM", "Workflows internes", "Systèmes de contenu IA", "Intégrations IA"]
+      },
+      "strategyAnalytics": {
+        "title": "Stratégie & Analytics",
+        "description": "Nous transformons les questions business en priorités digitales claires, puis mettons en place les moyens de suivre ce qui compte.",
+        "help": "La recherche, la mesure et l’analyse soutiennent des décisions mieux informées, sans masquer les limites des données disponibles.",
+        "includes": ["Stratégie digitale", "Étude de marché", "Analyse concurrentielle", "Analytics et tracking", "Optimisation de conversion", "Funnels marketing", "Reporting de performance"]
+      }
+    },
+    "closing": {
+      "eyebrow": "Un besoin transversal ?",
+      "title": "Construisons le bon périmètre pour votre projet.",
+      "description": "Votre besoin peut mobiliser une expertise ou en combiner plusieurs. Présentez-nous votre contexte et nous vous aiderons à clarifier une approche adaptée.",
+      "cta": "Demander un devis gratuit"
+    }
+  },
+  "About": {
+    "hero": {
+      "eyebrow": "À propos de Klick Trick",
+      "title": "Une agence marocaine pensée pour relier les idées à l’exécution.",
+      "description": "Klick Trick est une agence digitale marocaine nouvellement établie et légalement enregistrée, créée pour accompagner les entreprises avec clarté, créativité et exigence.",
+      "cta": "Parler de votre projet",
+      "visualLabel": "Composition abstraite représentant la rencontre entre stratégie, créativité et technologie",
+      "visualCenter": "Klick Trick",
+      "visualOuter": "Créativité",
+      "visualInner": "Technologie"
+    },
+    "introduction": {
+      "eyebrow": "Notre point de départ",
+      "title": "Le digital fonctionne mieux quand ses disciplines avancent ensemble.",
+      "description": "Une marque forte sans expérience utile, une technologie sans stratégie ou une campagne sans message cohérent laissent toujours une partie du potentiel de côté. Klick Trick a été pensée pour réunir ces dimensions dans une même réflexion, puis les transformer en actions compréhensibles et réalisables."
+    },
+    "mission": {
+      "eyebrow": "Notre mission",
+      "title": "Aider les entreprises à avancer avec une direction digitale plus claire.",
+      "description": "Nous voulons rendre l’expertise digitale plus connectée, plus lisible et plus proche des réalités des entreprises marocaines.",
+      "statement": "Comprendre avant de proposer. Relier avant de produire. Apprendre avant d’ajuster.",
+      "note": "Notre rôle n’est pas d’ajouter de la complexité, mais de transformer des ambitions, contraintes et opportunités en décisions utiles."
+    },
+    "philosophy": {
+      "eyebrow": "Notre philosophie",
+      "title": "Le fond guide la forme.",
+      "description": "Trois principes structurent notre manière d’aborder chaque collaboration.",
+      "items": {
+        "clarity": {"title": "Clarifier", "description": "Nous commençons par comprendre le problème, les publics et les priorités avant de choisir les livrables."},
+        "connection": {"title": "Connecter", "description": "Nous faisons dialoguer stratégie, marque, contenu, acquisition et technologie pour éviter les actions isolées."},
+        "craft": {"title": "Soigner", "description": "Nous accordons de l’importance aux détails, à l’utilité et à la qualité d’exécution dans chaque point de contact."}
+      }
+    },
+    "approach": {
+      "eyebrow": "Créatif et technologique",
+      "title": "Une vision intégrée, pas une collection de prestations.",
+      "description": "Nous considérons chaque projet comme un système où la stratégie donne la direction, la création donne du sens et la technologie rend l’expérience possible.",
+      "detail": "Cette approche nous permet de composer un accompagnement adapté : concentré sur une expertise lorsque c’est suffisant, ou transversal lorsque le projet demande plusieurs compétences.",
+      "cta": "Découvrir nos services",
+      "pillars": {"strategy": "Stratégie", "creative": "Création", "technology": "Technologie", "growth": "Progression"}
+    },
+    "values": {
+      "eyebrow": "Nos valeurs",
+      "title": "Des principes visibles dans le travail.",
+      "description": "Nous voulons construire des relations professionnelles simples, exigeantes et respectueuses du contexte de chacun.",
+      "items": {
+        "curiosity": {"title": "Curiosité", "description": "Poser les bonnes questions et regarder au-delà de la première réponse."},
+        "relevance": {"title": "Pertinence", "description": "Choisir ce qui sert réellement le projet plutôt que suivre chaque tendance."},
+        "collaboration": {"title": "Collaboration", "description": "Partager les décisions, les contraintes et les avancées avec transparence."},
+        "learning": {"title": "Apprentissage", "description": "Observer les retours disponibles et améliorer le travail de façon raisonnée."}
+      }
+    },
+    "collaboration": {
+      "eyebrow": "Collaborer avec nous",
+      "title": "Un cadre clair, une conversation continue.",
+      "description": "Chaque projet garde sa propre forme, mais notre manière de travailler reste lisible du début à la suite.",
+      "steps": {
+        "listen": {"title": "Écouter", "description": "Comprendre votre entreprise, vos interlocuteurs et vos contraintes."},
+        "align": {"title": "Aligner", "description": "Définir ensemble les priorités, les responsabilités et les validations."},
+        "create": {"title": "Créer", "description": "Concevoir et produire avec des points de contact réguliers."},
+        "improve": {"title": "Améliorer", "description": "Tirer des enseignements et ajuster ce qui mérite de l’être."}
+      }
+    },
+    "audience": {
+      "eyebrow": "Les entreprises que nous aidons",
+      "title": "Une approche adaptable à différents moments de croissance.",
+      "description": "Nous accompagnons les structures qui souhaitent mieux organiser, exprimer ou développer leur présence digitale.",
+      "items": {"startups": "Startups", "ecommerce": "Entreprises e-commerce", "professionals": "Professionnels", "companies": "Entreprises établies"}
+    },
+    "closing": {
+      "eyebrow": "Faisons connaissance",
+      "title": "Votre ambition mérite une conversation claire.",
+      "description": "Parlez-nous de votre contexte, de ce que vous souhaitez améliorer et de la prochaine étape que vous imaginez.",
+      "cta": "Demander un devis gratuit"
+    }
+  },
+  "Contact": {
+    "hero": {
+      "eyebrow": "Démarrer un projet",
+      "title": "Parlons de votre prochaine étape digitale.",
+      "description": "Présentez-nous votre contexte, votre besoin et ce que vous souhaitez faire avancer. Nous utiliserons ces informations uniquement pour étudier votre demande et vous répondre."
+    },
+    "form": {
+      "eyebrow": "Votre demande",
+      "title": "Donnez-nous les premiers éléments.",
+      "description": "Les champs marqués d’un astérisque sont requis. Aucun paiement ni engagement n’est demandé avec ce formulaire.",
+      "fields": {
+        "firstName": "Prénom",
+        "phone": "Téléphone",
+        "email": "Adresse email",
+        "optional": "facultatif",
+        "subject": "Sujet",
+        "subjectPlaceholder": "Choisir un sujet",
+        "message": "Message"
+      },
+      "subjects": {
+        "digital-marketing": "Marketing digital",
+        "branding-creative": "Branding & Création",
+        "web-technology": "Web & Technologie",
+        "social-media": "Réseaux sociaux",
+        "ai-automation": "IA & Automatisation",
+        "strategy-analytics": "Stratégie & Analytics",
+        "other": "Autre demande"
+      },
+      "submit": "Envoyer ma demande",
+      "submitting": "Envoi en cours…",
+      "privacy": "Vos informations servent uniquement à traiter cette demande. Elles sont transmises via notre prestataire d’envoi d’emails et ne sont pas enregistrées dans une base de données par ce site.",
+      "errors": {
+        "required": "Ce champ est requis.",
+        "tooLong": "La valeur saisie est trop longue.",
+        "invalidEmail": "Saisissez une adresse email valide.",
+        "invalidPhone": "Saisissez un numéro de téléphone valide, au format marocain ou international.",
+        "invalidSubject": "Choisissez un sujet dans la liste."
+      },
+      "status": {
+        "accepted": "Votre demande a été acceptée par notre service d’envoi. Cela ne confirme pas encore sa livraison finale.",
+        "validation": "Vérifiez les champs indiqués puis réessayez.",
+        "rateLimited": "Trop de tentatives ont été effectuées. Veuillez patienter avant de réessayer.",
+        "deliveryFailed": "Le service d’envoi n’a pas accepté votre demande. Vos informations sont conservées dans le formulaire afin que vous puissiez réessayer.",
+        "unavailable": "Le formulaire est temporairement indisponible. Vous pouvez réessayer plus tard ou utiliser WhatsApp.",
+        "invalid": "Cette demande n’a pas pu être traitée. Vérifiez le formulaire puis réessayez."
+      }
+    },
+    "expectations": {
+      "eyebrow": "Après l’envoi",
+      "title": "Un échange simple et utile.",
+      "steps": {
+        "review": {"title": "Lecture de votre demande", "description": "Nous examinons les informations que vous avez choisi de partager."},
+        "context": {"title": "Clarification du contexte", "description": "Nous pouvons vous demander les éléments nécessaires pour mieux comprendre le besoin."},
+        "reply": {"title": "Prochaine étape", "description": "Nous vous répondons avec une orientation ou une proposition de discussion adaptée."}
+      }
+    },
+    "alternative": {
+      "eyebrow": "Un autre canal",
+      "title": "Vous préférez WhatsApp ?",
+      "description": "Ouvrez une conversation avec un message prérempli. Le numéro est configuré par Klick Trick mais son statut WhatsApp n’est pas affirmé par ce site."
+    }
+  },
+  "Footer": {
+    "tagline": "Stratégie, créativité, technologie et performance au service de vos ambitions digitales.",
+    "navigation": "Navigation",
+    "contact": "Votre projet",
+    "contactText": "Une idée, un besoin ou un objectif à clarifier ? Parlons-en.",
+    "rights": "Tous droits réservés.",
+    "provisional": "Identité visuelle provisoire"
+  },
+  "WhatsApp": {
+    "label": "Contacter Klick Trick sur WhatsApp",
+    "cta": "Discuter sur WhatsApp",
+    "message": "Bonjour Klick Trick, je souhaite vous présenter un projet digital et discuter des prochaines étapes."
+  },
+  "Accessibility": {
+    "skipToContent": "Aller au contenu"
+  },
+  "Errors": {
+    "title": "Une erreur est survenue.",
+    "description": "Veuillez réessayer. Si le problème persiste, vous pourrez nous contacter depuis la page Contact.",
+    "retry": "Réessayer",
+    "notFoundTitle": "Page introuvable",
+    "notFoundDescription": "La page demandée n’existe pas ou a été déplacée.",
+    "backHome": "Retour à l’accueil"
+  }
+}

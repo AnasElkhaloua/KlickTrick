@@ -1,22 +1,33 @@
 @import "tailwindcss";
+@import "lenis/dist/lenis.css";
 
 :root {
-  --color-background: #000000;
-  --color-surface: #1a242c;
-  --color-surface-soft: rgba(26, 36, 44, 0.62);
-  --color-foreground: #ffffff;
-  --color-muted: #9b9ea0;
+  --color-background: #030304;
+  --color-surface: #0b0b0d;
+  --color-surface-raised: #111114;
+  --color-foreground: #f4f4f5;
+  --color-muted: #9a9a9e;
+  --color-line: rgba(255, 255, 255, 0.1);
   --color-blue: #56a6d8;
-  --color-mint: #75f8d2;
-  --gradient-accent: linear-gradient(90deg, #75f8d2 0%, #56a6d8 38%, #56a6d8 64%, #75f8d2 100%);
-  --radius-card: 2rem;
-  --section-space: clamp(5.5rem, 9vw, 7.5rem);
+  --radius-card: 1.25rem;
+  --section-space: clamp(5.5rem, 10vw, 8.5rem);
 }
 
 @theme inline {
-  --font-sans: var(--font-poppins);
+  --font-sans: var(--font-geist);
+  --font-display: var(--font-outfit);
+  --font-serif: var(--font-fraunces);
   --color-background: var(--color-background);
   --color-foreground: var(--color-foreground);
+}
+
+@layer base {
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-outfit), sans-serif;
+    font-weight: 500;
+  }
 }
 
 * {
@@ -26,7 +37,6 @@
 html {
   background: var(--color-background);
   color-scheme: dark;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -35,13 +45,14 @@ body {
   overflow-x: clip;
   background: var(--color-background);
   color: var(--color-foreground);
-  font-family: var(--font-poppins), sans-serif;
+  font-family: var(--font-geist), sans-serif;
+  -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: var(--color-mint);
-  color: #000000;
+  background: var(--color-blue);
+  color: #030304;
 }
 
 a,
@@ -49,23 +60,199 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Small pill label above hero headlines. */
 .eyebrow {
-  margin-bottom: 1rem;
-  background: var(--gradient-accent);
-  background-clip: text;
-  color: transparent;
+  display: inline-flex;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.4rem 0.9rem;
+  color: var(--color-foreground);
   font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-weight: 500;
 }
 
-.accent-gradient {
-  background-image: var(--gradient-accent);
+/* Italic serif accent word inside a sans display headline. */
+.accent {
+  font-family: var(--font-fraunces), serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  padding-right: 0.06em;
+}
+
+.display {
+  font-family: var(--font-outfit), sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 1.04;
 }
 
 .section-space {
   padding-block: var(--section-space);
+}
+
+.split-word {
+  display: inline-block;
+}
+
+/* Card hover, as in the reference: a soft fill follows the cursor (ScrollScenes writes --mx/--my)
+   and two blue arcs race around the border from one corner, meeting at the opposite one. */
+@layer components {
+  .spotlight {
+    position: relative;
+    isolation: isolate;
+  }
+}
+
+@property --shine-a { syntax: "<angle>"; inherits: false; initial-value: 135deg; }
+@property --shine-b { syntax: "<angle>"; inherits: false; initial-value: 135deg; }
+@property --shine-w { syntax: "<angle>"; inherits: false; initial-value: 24deg; }
+
+.spotlight::after,
+.spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.spotlight::after {
+  z-index: -1;
+  background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 50%), rgba(86, 166, 216, 0.14), transparent 60%);
+  transition: opacity 0.4s ease;
+}
+
+.spotlight::before {
+  z-index: 1;
+  padding: 1px;
+  background:
+    conic-gradient(from calc(var(--shine-a) - var(--shine-w)), transparent 0deg, #56a6d8 calc(var(--shine-w) / 2), #b4dcf3 var(--shine-w), transparent calc(var(--shine-w) * 2), transparent 360deg),
+    conic-gradient(from calc(var(--shine-b) - var(--shine-w)), transparent 0deg, #56a6d8 calc(var(--shine-w) / 2), #b4dcf3 var(--shine-w), transparent calc(var(--shine-w) * 2), transparent 360deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.spotlight:hover::after {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .spotlight:is(:hover, :focus-visible)::before {
+    animation: card-shine 2.8s linear infinite;
+  }
+}
+
+@keyframes card-shine {
+  0% { --shine-a: 135deg; --shine-b: 135deg; --shine-w: 0deg; opacity: 1; }
+  10% { --shine-w: 24deg; }
+  86% { --shine-a: -45deg; --shine-b: 315deg; --shine-w: 24deg; opacity: 1; }
+  100% { --shine-a: -45deg; --shine-b: 315deg; --shine-w: 24deg; opacity: 0; }
+}
+
+.spotlight-text {
+  background: radial-gradient(420px circle at var(--mx, -999px) var(--my, -999px), #56a6d8, #f4f4f5 70%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Hero entrance runs in CSS so it paints with the first frame, no wait for hydration. */
+.hero-intro .split-word,
+.hero-intro [data-intro] {
+  animation: intro-word 1.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(var(--i, 0) * 70ms + 120ms);
+}
+
+.hero-intro [data-intro] {
+  animation-name: intro-fade;
+}
+
+@keyframes intro-word {
+  from { opacity: 0; filter: blur(12px); transform: translateY(40%); }
+}
+
+@keyframes intro-fade {
+  from { opacity: 0; transform: translateY(24px); }
+}
+
+/* Header: transparent bar at the top, floating glass pill once the page scrolls.
+   CSS scroll-driven animation, no JS; browsers without support keep the solid bar. */
+.site-header-inner {
+  max-width: 1440px;
+  border: 1px solid transparent;
+  border-bottom-color: var(--color-line);
+  background: rgba(10, 10, 12, 0.8);
+  backdrop-filter: blur(18px);
+}
+
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .site-header-inner {
+      animation: header-float linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 140px;
+    }
+  }
+}
+
+@keyframes header-float {
+  from {
+    border-color: transparent;
+    background: transparent;
+    backdrop-filter: none;
+  }
+
+  to {
+    max-width: 1200px;
+    margin-top: 0.75rem;
+    border-color: var(--color-line);
+    border-radius: 1rem;
+    background: rgba(10, 10, 12, 0.72);
+    backdrop-filter: blur(18px);
+  }
+}
+
+/* Letter roll on button hover (RollText). */
+.roll {
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+  white-space: pre;
+}
+
+.roll-line {
+  display: inline-flex;
+}
+
+.roll-line + .roll-line {
+  position: absolute;
+  inset: 100% 0 auto;
+}
+
+.roll-ch {
+  display: inline-block;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--i) * 14ms);
+}
+
+:is(a, button):hover .roll-ch,
+:is(a, button):focus-visible .roll-ch {
+  transform: translateY(-100%);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 38s linear infinite;
+}
+
+@keyframes marquee {
+  to { transform: translateX(-50%); }
 }
 
 .hero-panel {
@@ -104,10 +291,6 @@ button {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
   *,
   *::before,
   *::after {
@@ -115,5 +298,9 @@ button {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+
+  .marquee-track {
+    animation: none;
   }
 }

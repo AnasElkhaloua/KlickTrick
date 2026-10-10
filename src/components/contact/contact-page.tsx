@@ -1,11 +1,13 @@
 import {getLocale, getTranslations} from "next-intl/server";
 import {ContactForm} from "@/components/contact/contact-form";
 import {ContactWhatsApp} from "@/components/contact/contact-whatsapp";
-import {Card} from "@/components/ui/card";
+import {SplitWords} from "@/components/motion/split-words";
+import {PageHero} from "@/components/pages/page-hero";
 import {Container} from "@/components/ui/container";
 import {contactSubjects} from "@/lib/contact/schema";
 
 const expectationSteps = ["review", "context", "reply"] as const;
+const cardClass = "rounded-[var(--radius-card)] border border-[var(--color-line)] bg-[var(--color-surface)]";
 
 export async function ContactPageContent() {
   const locale = await getLocale() as "fr" | "en";
@@ -14,33 +16,41 @@ export async function ContactPageContent() {
 
   return (
     <main className="overflow-hidden">
-      <section className="pb-16 pt-16 sm:pb-24 sm:pt-24 lg:pb-28 lg:pt-28">
-        <Container>
-          <div className="grid items-end gap-10 lg:grid-cols-[1.1fr_.9fr] lg:gap-24">
-            <div><p className="eyebrow">{t("hero.eyebrow")}</p><h1 className="max-w-4xl text-balance text-[clamp(2.65rem,6vw,5.25rem)] font-semibold leading-[.99] tracking-[-.055em] text-white">{t("hero.title")}</h1></div>
-            <p className="max-w-2xl text-pretty text-base leading-8 text-[var(--color-muted)] sm:text-lg">{t("hero.description")}</p>
-          </div>
-        </Container>
-      </section>
+      <PageHero eyebrow={t("hero.eyebrow")} title={t("hero.title")} description={t("hero.description")} />
 
-      <section className="pb-20 sm:pb-28 lg:pb-32">
+      <section className="pb-[var(--section-space)]">
         <Container>
-          <div className="grid items-start gap-8 lg:grid-cols-[1.25fr_.75fr] lg:gap-10">
-            <Card id="contact-form" className="scroll-mt-28 border-white/10 bg-[var(--color-surface)] p-6 sm:p-9 lg:p-10">
-              <p className="eyebrow">{t("form.eyebrow")}</p>
-              <h2 className="text-balance text-3xl font-semibold tracking-[-.04em] text-white sm:text-4xl">{t("form.title")}</h2>
-              <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--color-muted)] sm:text-base">{t("form.description")}</p>
+          <div className="mx-auto grid max-w-5xl items-start gap-4 lg:grid-cols-[1.45fr_.75fr]">
+            <div id="contact-form" data-reveal className={`${cardClass} spotlight scroll-mt-28 p-6 sm:p-9`}>
+              <svg viewBox="0 0 24 24" className="size-6 text-white" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true"><path d="M4 5h16v11H8l-4 4V5Z" strokeLinejoin="round"/></svg>
+              <h2 className="display mt-5 text-balance text-3xl text-white sm:text-4xl"><SplitWords text={t("form.title")} /></h2>
+              <p className="mt-3 max-w-xl text-sm leading-6 text-[var(--color-muted)] sm:text-base">{t("form.description")}</p>
               <ContactForm locale={locale} subjects={subjects} copy={{
                 firstName: t("form.fields.firstName"), phone: t("form.fields.phone"), email: t("form.fields.email"), emailOptional: t("form.fields.optional"), subject: t("form.fields.subject"), subjectPlaceholder: t("form.fields.subjectPlaceholder"), message: t("form.fields.message"), submit: t("form.submit"), submitting: t("form.submitting"), privacy: t("form.privacy")
               }}/>
-            </Card>
+            </div>
 
-            <aside className="grid gap-5 lg:sticky lg:top-8">
-              <Card className="relative overflow-hidden bg-[var(--color-surface-soft)]">
-                <div className="absolute -right-20 -top-20 size-56 rounded-full bg-[var(--color-blue)]/18 blur-[70px]" aria-hidden="true"/>
-                <div className="relative"><p className="eyebrow">{t("expectations.eyebrow")}</p><h2 className="text-2xl font-semibold tracking-[-.035em] text-white">{t("expectations.title")}</h2><ol className="mt-7 space-y-6">{expectationSteps.map((step, index) => <li key={step} className="grid grid-cols-[40px_1fr] gap-4"><span className="grid size-10 place-items-center rounded-full border border-[var(--color-blue)]/25 bg-black/30 text-xs font-semibold text-[var(--color-mint)]">0{index + 1}</span><div><h3 className="text-sm font-semibold text-white sm:text-base">{t(`expectations.steps.${step}.title`)}</h3><p className="mt-1 text-sm leading-6 text-[var(--color-muted)]">{t(`expectations.steps.${step}.description`)}</p></div></li>)}</ol></div>
-              </Card>
-              <Card className="bg-black/35"><p className="eyebrow">{t("alternative.eyebrow")}</p><h2 className="text-2xl font-semibold tracking-[-.035em] text-white">{t("alternative.title")}</h2><p className="mt-3 text-sm leading-7 text-[var(--color-muted)]">{t("alternative.description")}</p><div className="mt-6"><ContactWhatsApp/></div></Card>
+            <aside data-stagger className="grid gap-4 lg:sticky lg:top-24">
+              <div className={`${cardClass} spotlight relative overflow-hidden p-6 sm:p-7`}>
+                <div className="absolute -right-16 -top-16 size-48 rounded-full bg-[var(--color-blue)]/20 blur-[60px]" aria-hidden="true"/>
+                <h2 className="relative text-xl tracking-[-0.03em] text-white">{t("expectations.title")}</h2>
+                <ol className="relative mt-6 space-y-5">
+                  {expectationSteps.map((step, index) => (
+                    <li key={step} className="grid grid-cols-[28px_1fr] gap-3">
+                      <span className="grid size-7 place-items-center rounded-full border border-[var(--color-line)] text-xs text-white">{index + 1}</span>
+                      <div>
+                        <h3 className="text-sm text-white">{t(`expectations.steps.${step}.title`)}</h3>
+                        <p className="mt-1 text-sm leading-6 text-[var(--color-muted)]">{t(`expectations.steps.${step}.description`)}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+              <div className={`${cardClass} spotlight p-6 sm:p-7`}>
+                <h2 className="text-xl tracking-[-0.03em] text-white">{t("alternative.title")}</h2>
+                <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">{t("alternative.description")}</p>
+                <div className="mt-5"><ContactWhatsApp/></div>
+              </div>
             </aside>
           </div>
         </Container>

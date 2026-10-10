@@ -2,8 +2,11 @@ import {getTranslations} from "next-intl/server";
 import {HeroVisual} from "@/components/home/hero-visual";
 import {ServiceIcon} from "@/components/home/service-icon";
 import {WhatsAppCta} from "@/components/home/whatsapp-cta";
+import {FluidBackground} from "@/components/motion/fluid-background";
+import {ScrollScenes} from "@/components/motion/scroll-motion";
+import {SplitWords} from "@/components/motion/split-words";
+import {ClosingCta} from "@/components/pages/closing-cta";
 import {ButtonLink} from "@/components/ui/button";
-import {Card} from "@/components/ui/card";
 import {Container} from "@/components/ui/container";
 import {SectionHeading} from "@/components/ui/section-heading";
 import {serviceCategories} from "@/content/services";
@@ -13,100 +16,112 @@ const differentiators = ["integrated", "tailored", "creative", "clear"] as const
 const processSteps = ["discovery", "strategy", "execution", "optimization"] as const;
 const audiences = ["startups", "ecommerce", "professionals", "established"] as const;
 
-function ArrowIcon() {
-  return <svg viewBox="0 0 20 20" className="size-5" fill="none" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>;
-}
+const cardClass = "rounded-[var(--radius-card)] border border-[var(--color-line)] bg-[var(--color-surface)]";
 
 export async function Homepage() {
   const t = await getTranslations("Home");
+  const serviceTitles = serviceCategories.map((service) => t(`services.items.${service.id}.title`));
 
   return (
     <main className="overflow-hidden">
-      <section className="relative pb-20 pt-16 sm:pb-24 sm:pt-24 lg:pb-32 lg:pt-28">
+      <ScrollScenes />
+
+      <section className="relative isolate pb-20 pt-36 sm:pt-44 lg:pb-28">
+        <FluidBackground />
         <Container>
-          <div className="mx-auto max-w-[1040px] text-center">
-            <p className="eyebrow">{t("hero.eyebrow")}</p>
-            <h1 className="text-balance text-[clamp(2.65rem,6.6vw,5.75rem)] font-semibold leading-[.98] tracking-[-0.06em] text-white">
-              {t("hero.title")}
+          <div className="hero-intro mx-auto max-w-4xl text-center">
+            <p data-intro className="eyebrow">{t("hero.eyebrow")}</p>
+            <h1 className="display text-balance text-[clamp(2.8rem,7vw,5.4rem)] leading-[1] text-white">
+              <SplitWords text={t("hero.title")} />
             </h1>
-            <p className="mx-auto mt-7 max-w-[760px] text-pretty text-base leading-7 text-[var(--color-muted)] sm:text-lg sm:leading-8">
+            <p data-intro style={{"--i": 6} as React.CSSProperties} className="mx-auto mt-7 max-w-xl text-pretty text-base leading-7 text-[var(--color-muted)] sm:text-lg">
               {t("hero.description")}
             </p>
-            <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
-              <ButtonLink href={{pathname: "/contact", hash: "contact-form"}} className="w-full sm:w-auto">{t("hero.primaryCta")}</ButtonLink>
-              <ButtonLink href="/services" variant="secondary" className="w-full gap-2 sm:w-auto">{t("hero.secondaryCta")}<ArrowIcon /></ButtonLink>
+            <div data-intro style={{"--i": 8} as React.CSSProperties} className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+              <ButtonLink href={{pathname: "/contact", hash: "contact-form"}}>{t("hero.primaryCta")}</ButtonLink>
+              <ButtonLink href="/services" variant="secondary">{t("hero.secondaryCta")}</ButtonLink>
             </div>
           </div>
           <HeroVisual label={t("hero.visualLabel")} />
         </Container>
       </section>
 
+      {/* One marquee on the page: the six capabilities, as the reference does with its service list. */}
+      <div className="overflow-hidden [mask-image:linear-gradient(to_right,transparent,#000_18%,#000_82%,transparent)] border-y border-[var(--color-line)] bg-[var(--color-surface)] py-5" aria-hidden="true">
+        <div className="marquee-track">
+          {[0, 1].map((copy) => (
+            <div key={copy} className="flex shrink-0 items-center">
+              {serviceTitles.map((title) => (
+                <span key={title} className="flex items-center whitespace-nowrap font-display text-[clamp(1.25rem,2.4vw,1.9rem)] tracking-[-0.04em] text-white/85">
+                  {title}<span className="px-8 text-[var(--color-blue)]">/</span>
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
       <section id="services" className="section-space scroll-mt-24">
         <Container>
-          <div className="grid gap-6 lg:grid-cols-[.95fr_1.05fr] lg:items-end lg:gap-24">
-            <div>
-              <p className="eyebrow">{t("services.eyebrow")}</p>
-              <h2 className="text-balance text-[clamp(2.25rem,5vw,4rem)] font-semibold leading-[1.08] tracking-[-0.04em] text-white">{t("services.title")}</h2>
-            </div>
-            <p className="max-w-2xl text-pretty text-base leading-7 text-[var(--color-muted)] sm:text-lg sm:leading-8">{t("services.description")}</p>
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+            <SectionHeading title={t("services.title")} description={t("services.description")} />
+            <ButtonLink href="/services" variant="secondary" className="self-start lg:self-auto">{t("services.allCta")}</ButtonLink>
           </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-7">
-            {serviceCategories.map((service, index) => (
-              <Card key={service.id} className="group relative min-h-[292px] overflow-hidden transition duration-300 hover:-translate-y-1 hover:border-[var(--color-blue)]/35 motion-reduce:transform-none">
-                <div className="absolute -right-12 -top-12 size-36 rounded-full bg-[var(--color-blue)]/0 blur-3xl transition duration-500 group-hover:bg-[var(--color-blue)]/15" aria-hidden="true" />
-                <div className="relative flex h-full flex-col">
-                  <div className="flex items-start justify-between gap-4"><ServiceIcon name={service.icon} /><span className="text-xs font-semibold tracking-[.14em] text-white/65">0{index + 1}</span></div>
-                  <h3 className="mt-8 text-xl font-semibold tracking-[-.025em] text-white sm:text-2xl">{t(`services.items.${service.id}.title`)}</h3>
-                  <p className="mt-3 text-sm leading-7 text-[var(--color-muted)] sm:text-base">{t(`services.items.${service.id}.description`)}</p>
-                  <Link href="/services" className="mt-auto flex items-center gap-2 pt-7 text-sm font-semibold text-white transition hover:text-[var(--color-mint)] focus-visible:rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-mint)]">
-                    {t("services.cardCta")}<ArrowIcon />
-                  </Link>
-                </div>
-              </Card>
+          <div data-stagger className="mt-12 grid gap-3 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
+            {serviceCategories.map((service) => (
+              <Link key={service.id} href={{pathname: "/services", hash: service.id}} className={`${cardClass} spotlight group relative flex min-h-[260px] flex-col overflow-hidden p-7 transition-colors duration-300 hover:border-[var(--color-blue)]/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-blue)]`}>
+                <div aria-hidden="true" className="absolute -right-16 -top-16 size-48 rounded-full bg-[var(--color-blue)]/0 blur-3xl transition duration-500 group-hover:bg-[var(--color-blue)]/20" />
+                <ServiceIcon name={service.icon} />
+                <h3 className="mt-auto pt-10 text-xl tracking-[-0.03em] text-white">{t(`services.items.${service.id}.title`)}</h3>
+                <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">{t(`services.items.${service.id}.description`)}</p>
+                <span className="mt-5 inline-flex items-center gap-2 text-sm text-white/70 transition group-hover:text-white">{t("services.cardCta")} <span aria-hidden="true">→</span></span>
+              </Link>
             ))}
           </div>
-          <div className="mt-10 flex justify-center"><ButtonLink href="/services" variant="secondary" className="w-full sm:w-auto">{t("services.allCta")}</ButtonLink></div>
         </Container>
       </section>
 
       <section className="section-space">
         <Container>
-          <div className="grid items-center gap-12 lg:grid-cols-[.88fr_1.12fr] lg:gap-24">
-            <div className="relative min-h-[430px] overflow-hidden rounded-[var(--radius-card)] border border-white/8 bg-[var(--color-surface-soft)] p-6 sm:min-h-[540px] sm:p-10">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_45%_44%,rgba(86,166,216,.2),transparent_38%),linear-gradient(145deg,rgba(117,248,210,.04),transparent_65%)]" />
-              <div className="absolute inset-[13%] rounded-full border border-white/10" aria-hidden="true" />
-              <div className="absolute inset-[24%] rounded-full border border-[var(--color-blue)]/25" aria-hidden="true" />
-              <div className="absolute left-1/2 top-1/2 grid size-32 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-[var(--color-mint)]/30 bg-black/45 shadow-[0_0_80px_rgba(86,166,216,.25)] sm:size-40"><span className="accent-gradient bg-clip-text text-5xl font-semibold tracking-[-.08em] text-transparent sm:text-6xl">KT</span></div>
-              <span className="absolute left-[13%] top-[28%] size-4 rounded-full bg-[var(--color-mint)] shadow-[0_0_24px_var(--color-mint)]" aria-hidden="true" />
-              <span className="absolute bottom-[21%] right-[18%] size-5 rounded-full bg-[var(--color-blue)] shadow-[0_0_30px_var(--color-blue)]" aria-hidden="true" />
-              <span className="absolute right-[12%] top-[18%] rounded-full border border-white/15 bg-black/50 px-4 py-2 text-xs text-white/65">{t("why.visualStrategy")}</span>
-              <span className="absolute bottom-[12%] left-[10%] rounded-full border border-white/15 bg-black/50 px-4 py-2 text-xs text-white/65">{t("why.visualExecution")}</span>
-            </div>
+          <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
             <div>
-              <SectionHeading eyebrow={t("why.eyebrow")} title={t("why.title")} description={t("why.description")} />
-              <div className="mt-10 divide-y divide-white/10 border-y border-white/10">
-                {differentiators.map((item, index) => (
-                  <div key={item} className="grid gap-3 py-6 sm:grid-cols-[52px_1fr] sm:gap-5">
-                    <span className="text-sm font-semibold text-[var(--color-mint)]">0{index + 1}</span>
-                    <div><h3 className="text-lg font-semibold text-white sm:text-xl">{t(`why.items.${item}.title`)}</h3><p className="mt-2 text-sm leading-7 text-[var(--color-muted)] sm:text-base">{t(`why.items.${item}.description`)}</p></div>
+              <SectionHeading title={t("why.title")} description={t("why.description")} />
+              <div data-stagger className="mt-10 grid gap-x-8 gap-y-7 sm:grid-cols-2">
+                {differentiators.map((item) => (
+                  <div key={item} className="border-t border-[var(--color-line)] pt-5">
+                    <h3 className="text-lg tracking-[-0.02em] text-white">{t(`why.items.${item}.title`)}</h3>
+                    <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">{t(`why.items.${item}.description`)}</p>
                   </div>
                 ))}
               </div>
             </div>
+
+            <div data-orbit data-tilt="8" aria-hidden="true" className={`${cardClass} spotlight relative min-h-[440px] overflow-hidden sm:min-h-[540px]`}>
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(86,166,216,.22),transparent_45%)]" />
+              <div data-depth="10" className="absolute inset-[12%]"><div data-orbit-ring className="absolute inset-0 rounded-full border border-dashed border-white/15" /></div>
+              <div data-depth="22" className="absolute inset-[24%]"><div data-orbit-ring className="absolute inset-0 rounded-full border border-[var(--color-blue)]/20 border-t-[var(--color-blue)]" /></div>
+              <div data-orbit-core data-depth="36" className="absolute left-1/2 top-1/2 grid size-32 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-white/15 bg-black/60 shadow-[0_0_90px_rgba(86,166,216,.35)] sm:size-40">
+                <span className="font-display text-5xl tracking-[-0.08em] text-white sm:text-6xl">KT</span>
+              </div>
+              <span data-orbit-float className="absolute left-[14%] top-[28%] size-3 rounded-full bg-[var(--color-blue)] shadow-[0_0_24px_var(--color-blue)]" />
+              <span data-orbit-float className="absolute bottom-[22%] right-[18%] size-4 rounded-full bg-white shadow-[0_0_30px_rgba(255,255,255,.6)]" />
+              <span data-orbit-float className="eyebrow absolute right-[10%] top-[16%] !mb-0 bg-black/60">{t("why.visualStrategy")}</span>
+              <span data-orbit-float className="eyebrow absolute bottom-[12%] left-[9%] !mb-0 bg-black/60">{t("why.visualExecution")}</span>
+            </div>
           </div>
         </Container>
       </section>
 
       <section className="section-space">
         <Container>
-          <SectionHeading eyebrow={t("process.eyebrow")} title={t("process.title")} description={t("process.description")} align="center" />
-          <ol className="relative mt-12 grid gap-5 md:grid-cols-2 lg:mt-16 lg:grid-cols-4">
-            <div className="absolute left-[12.5%] right-[12.5%] top-8 hidden h-px bg-gradient-to-r from-[var(--color-mint)]/20 via-[var(--color-blue)]/65 to-[var(--color-mint)]/20 lg:block" aria-hidden="true" />
+          <SectionHeading title={t("process.title")} description={t("process.description")} />
+          <ol data-stagger className="mt-12 grid gap-3 md:grid-cols-2 lg:mt-16">
             {processSteps.map((step, index) => (
-              <li key={step} className="group relative rounded-[1.75rem] border border-white/8 bg-black/35 p-6 backdrop-blur-sm sm:p-7">
-                <span className="relative z-10 grid size-16 place-items-center rounded-full border border-[var(--color-blue)]/30 bg-[var(--color-surface)] text-sm font-semibold text-[var(--color-mint)] transition duration-300 group-hover:border-[var(--color-mint)] group-hover:bg-[#20303a]">0{index + 1}</span>
-                <h3 className="mt-7 text-xl font-semibold text-white">{t(`process.steps.${step}.title`)}</h3>
-                <p className="mt-3 text-sm leading-7 text-[var(--color-muted)]">{t(`process.steps.${step}.description`)}</p>
+              <li key={step} className={`${cardClass} spotlight relative flex min-h-[340px] flex-col overflow-hidden p-8 sm:min-h-[400px] sm:p-10`}>
+                <div aria-hidden="true" className={index % 3 === 0 ? "absolute inset-x-0 bottom-0 h-2/3 bg-[radial-gradient(ellipse_80%_70%_at_70%_100%,rgba(86,166,216,.35),transparent_70%)]" : "absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.04)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:linear-gradient(to_top,#000,transparent_70%)]"} />
+                <h3 className="relative text-2xl tracking-[-0.03em] text-white sm:text-3xl">{t(`process.steps.${step}.title`)}</h3>
+                <p className="relative mt-3 max-w-md text-base leading-7 text-[var(--color-muted)]">{t(`process.steps.${step}.description`)}</p>
+                <span data-parallax="-40" aria-hidden="true" className="accent relative mt-auto self-end text-[clamp(6rem,12vw,9rem)] leading-[0.9] text-white/[0.12]">0{index + 1}</span>
               </li>
             ))}
           </ol>
@@ -115,38 +130,22 @@ export async function Homepage() {
 
       <section className="section-space">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[.7fr_1.3fr] lg:gap-20">
-            <SectionHeading eyebrow={t("audience.eyebrow")} title={t("audience.title")} description={t("audience.description")} />
-            <div className="grid gap-5 sm:grid-cols-2">
-              {audiences.map((audience, index) => (
-                <Card key={audience} className="group min-h-56 bg-[var(--color-surface-soft)] transition duration-300 hover:border-[var(--color-mint)]/30 sm:odd:translate-y-8 sm:odd:motion-reduce:translate-y-0">
-                  <div className="flex items-center justify-between"><span className="grid size-10 place-items-center rounded-full border border-white/10 text-xs font-semibold text-[var(--color-mint)]">0{index + 1}</span><span className="text-2xl text-white/25 transition group-hover:text-[var(--color-mint)]" aria-hidden="true">↗</span></div>
-                  <h3 className="mt-8 text-xl font-semibold text-white sm:text-2xl">{t(`audience.items.${audience}.title`)}</h3>
-                  <p className="mt-3 text-sm leading-7 text-[var(--color-muted)]">{t(`audience.items.${audience}.description`)}</p>
-                </Card>
-              ))}
-            </div>
+          <SectionHeading title={t("audience.title")} description={t("audience.description")} align="center" />
+          <div data-stagger className="mt-12 grid gap-3 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4">
+            {audiences.map((audience, index) => (
+              <div key={audience} className={`${cardClass} spotlight group relative flex min-h-[260px] flex-col overflow-hidden p-7 ${index === 1 ? "border-[var(--color-blue)]/35 bg-[linear-gradient(180deg,rgba(86,166,216,.16),var(--color-surface)_70%)]" : ""}`}>
+                <h3 className="text-xl tracking-[-0.03em] text-white">{t(`audience.items.${audience}.title`)}</h3>
+                <p className="mt-3 text-sm leading-6 text-[var(--color-muted)]">{t(`audience.items.${audience}.description`)}</p>
+                <span aria-hidden="true" className="mt-auto pt-8 text-xl text-white/30 transition group-hover:translate-x-1 group-hover:text-[var(--color-blue)]">→</span>
+              </div>
+            ))}
           </div>
         </Container>
       </section>
 
-      <section className="pb-20 pt-20 sm:pb-28 lg:pb-32 lg:pt-28">
-        <Container>
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#18252e] px-6 py-16 text-center sm:px-12 sm:py-20 lg:px-24 lg:py-24">
-            <div className="absolute -left-32 -top-40 size-[430px] rounded-full bg-[var(--color-mint)]/15 blur-[100px]" aria-hidden="true" />
-            <div className="absolute -bottom-52 -right-24 size-[500px] rounded-full bg-[var(--color-blue)]/25 blur-[110px]" aria-hidden="true" />
-            <div className="relative mx-auto max-w-4xl">
-              <p className="eyebrow">{t("finalCta.eyebrow")}</p>
-              <h2 className="text-balance text-[clamp(2.3rem,5vw,4.5rem)] font-semibold leading-[1.04] tracking-[-.05em] text-white">{t("finalCta.title")}</h2>
-              <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-7 text-white/65 sm:text-lg sm:leading-8">{t("finalCta.description")}</p>
-              <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
-                <ButtonLink href={{pathname: "/contact", hash: "contact-form"}} variant="inverted" className="w-full sm:w-auto">{t("finalCta.primaryCta")}</ButtonLink>
-                <WhatsAppCta />
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <ClosingCta title={t("finalCta.title")} description={t("finalCta.description")} buttonLabel={t("finalCta.primaryCta")}>
+        <WhatsAppCta />
+      </ClosingCta>
     </main>
   );
 }

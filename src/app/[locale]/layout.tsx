@@ -1,22 +1,20 @@
 import type {Metadata} from "next";
 import {hasLocale, NextIntlClientProvider} from "next-intl";
-import {getTranslations, setRequestLocale} from "next-intl/server";
+import {getMessages, getTranslations, setRequestLocale} from "next-intl/server";
 import {notFound} from "next/navigation";
-import {Poppins} from "next/font/google";
+import {Fraunces, Geist, Outfit} from "next/font/google";
 import {routing} from "@/i18n/routing";
 import {getSiteUrl, isPublicIndexingEnabled} from "@/lib/config/public";
 import {SiteHeader} from "@/components/layout/site-header";
 import {SiteFooter} from "@/components/layout/site-footer";
 import {FloatingWhatsApp} from "@/components/layout/floating-whatsapp";
-import {PageBackground} from "@/components/layout/page-background";
+import {SmoothScroll} from "@/components/motion/scroll-motion";
 import "../globals.css";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "optional"
-});
+// Body, display and the italic serif used for accent words in headlines (see SplitWords).
+const geist = Geist({variable: "--font-geist", subsets: ["latin"], display: "swap"});
+const outfit = Outfit({variable: "--font-outfit", subsets: ["latin"], weight: ["400", "500"], display: "swap"});
+const fraunces = Fraunces({variable: "--font-fraunces", subsets: ["latin"], style: "italic", weight: "400", display: "swap"});
 
 type Props = {
   children: React.ReactNode;
@@ -72,17 +70,19 @@ export default async function LocaleLayout({children, params}: Props) {
 
   setRequestLocale(locale);
   const accessibility = await getTranslations({locale, namespace: "Accessibility"});
+  // Only error.tsx translates on the client; ship just its namespace instead of the whole catalog.
+  const {Errors} = await getMessages({locale});
 
   return (
-    <html lang={locale} className={poppins.variable}>
+    <html lang={locale} className={`${geist.variable} ${outfit.variable} ${fraunces.variable}`}>
       <body>
-        <NextIntlClientProvider locale={locale} messages={null}>
+        <NextIntlClientProvider locale={locale} messages={{Errors}}>
           <a href="#main-content" className="focus-skip">{accessibility("skipToContent")}</a>
-          <PageBackground />
           <SiteHeader />
           <div id="main-content" tabIndex={-1} className="outline-none">{children}</div>
           <SiteFooter />
           <FloatingWhatsApp />
+          <SmoothScroll />
         </NextIntlClientProvider>
       </body>
     </html>

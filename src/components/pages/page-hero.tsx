@@ -1,4 +1,7 @@
 import type {ReactNode} from "react";
+import {FluidBackground} from "@/components/motion/fluid-background";
+import {ScrollScenes} from "@/components/motion/scroll-motion";
+import {SplitWords} from "@/components/motion/split-words";
 import {Container} from "@/components/ui/container";
 
 type PageHeroProps = {
@@ -6,22 +9,23 @@ type PageHeroProps = {
   title: string;
   description: string;
   actions?: ReactNode;
-  visual: ReactNode;
+  children?: ReactNode;
 };
 
-export function PageHero({eyebrow, title, description, actions, visual}: PageHeroProps) {
+// Centered inner-page hero: pill label, large headline with an accent word, short intro.
+export function PageHero({eyebrow, title, description, actions, children}: PageHeroProps) {
   return (
-    <section className="relative pb-16 pt-16 sm:pb-24 sm:pt-24 lg:pb-32 lg:pt-28">
+    <section className="relative isolate pb-16 pt-36 sm:pb-24 sm:pt-44">
+      <ScrollScenes />
+      <FluidBackground />
       <Container>
-        <div className="grid items-center gap-12 lg:grid-cols-[1.04fr_.96fr] lg:gap-20">
-          <div className="max-w-[720px]">
-            <p className="eyebrow">{eyebrow}</p>
-            <h1 className="text-balance text-[clamp(2.65rem,6vw,5.25rem)] font-semibold leading-[.99] tracking-[-.055em] text-white">{title}</h1>
-            <p className="mt-7 max-w-2xl text-pretty text-base leading-7 text-[var(--color-muted)] sm:text-lg sm:leading-8">{description}</p>
-            {actions ? <div className="mt-9 flex flex-col gap-4 sm:flex-row">{actions}</div> : null}
-          </div>
-          {visual}
+        <div className="hero-intro mx-auto max-w-4xl text-center">
+          <p data-intro className="eyebrow">{eyebrow}</p>
+          <h1 className="display text-balance text-[clamp(2.6rem,6.4vw,5rem)] text-white"><SplitWords text={title} /></h1>
+          <p data-intro style={{"--i": 6} as React.CSSProperties} className="mx-auto mt-7 max-w-2xl text-pretty text-base leading-7 text-[var(--color-muted)] sm:text-lg sm:leading-8">{description}</p>
+          {actions ? <div data-intro style={{"--i": 8} as React.CSSProperties} className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">{actions}</div> : null}
         </div>
+        {children}
       </Container>
     </section>
   );

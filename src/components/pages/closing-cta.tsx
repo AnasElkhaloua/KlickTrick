@@ -1,25 +1,27 @@
+import type {ReactNode} from "react";
+import {FluidBackground} from "@/components/motion/fluid-background";
+import {SplitWords} from "@/components/motion/split-words";
 import {ButtonLink} from "@/components/ui/button";
 import {Container} from "@/components/ui/container";
 
 type ClosingCtaProps = {
-  eyebrow: string;
   title: string;
   description: string;
   buttonLabel: string;
+  children?: ReactNode;
 };
 
-export function ClosingCta({eyebrow, title, description, buttonLabel}: ClosingCtaProps) {
+export function ClosingCta({title, description, buttonLabel, children}: ClosingCtaProps) {
   return (
-    <section className="pb-20 pt-16 sm:pb-28 sm:pt-24 lg:pb-32">
+    <section className="relative isolate overflow-hidden pb-10 pt-[var(--section-space)]">
+      <div data-cta className="absolute inset-0 -z-10"><FluidBackground /></div>
       <Container>
-        <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#18252e] px-6 py-16 text-center sm:px-12 sm:py-20 lg:px-24 lg:py-24">
-          <div className="absolute -left-32 -top-40 size-[430px] rounded-full bg-[var(--color-mint)]/15 blur-[100px]" aria-hidden="true" />
-          <div className="absolute -bottom-52 -right-24 size-[500px] rounded-full bg-[var(--color-blue)]/25 blur-[110px]" aria-hidden="true" />
-          <div className="relative mx-auto max-w-4xl">
-            <p className="eyebrow">{eyebrow}</p>
-            <h2 className="text-balance text-[clamp(2.3rem,5vw,4.5rem)] font-semibold leading-[1.04] tracking-[-.05em] text-white">{title}</h2>
-            <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-7 text-white/65 sm:text-lg sm:leading-8">{description}</p>
-            <ButtonLink href={{pathname: "/contact", hash: "contact-form"}} variant="inverted" className="mt-9 w-full sm:w-auto">{buttonLabel}</ButtonLink>
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 data-split className="display text-balance text-[clamp(2.4rem,5.6vw,4.4rem)] text-white"><SplitWords text={title} /></h2>
+          <p data-reveal className="mx-auto mt-6 max-w-xl text-pretty text-base leading-7 text-[var(--color-muted)] sm:text-lg sm:leading-8">{description}</p>
+          <div data-reveal className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+            <ButtonLink href={{pathname: "/contact", hash: "contact-form"}}>{buttonLabel}</ButtonLink>
+            {children}
           </div>
         </div>
       </Container>

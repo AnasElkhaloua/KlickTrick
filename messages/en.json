@@ -25,7 +25,7 @@
   "Home": {
     "hero": {
       "eyebrow": "Full-service digital agency in Morocco",
-      "title": "One agency. Every digital ambition.",
+      "title": "One agency. Every digital *ambition.*",
       "description": "Klick Trick helps Moroccan businesses move forward through an approach combining strategy, creativity, technology and sustainable growth.",
       "primaryCta": "Request a Free Quote",
       "secondaryCta": "Explore our services",
@@ -33,7 +33,7 @@
     },
     "services": {
       "eyebrow": "Our expertise",
-      "title": "Six capabilities. One digital vision.",
+      "title": "Six capabilities. One digital *vision.*",
       "description": "From strategy to execution, we bring together the right capabilities to build a coherent presence and help your business move forward.",
       "cardCta": "Explore capability",
       "allCta": "Explore all our services",
@@ -48,7 +48,7 @@
     },
     "why": {
       "eyebrow": "Why Klick Trick",
-      "title": "One connected team for your whole ambition.",
+      "title": "One *connected* team for your whole ambition.",
       "description": "We connect consulting, creative and technology so initiatives never work in isolation and every decision stays grounded in your reality.",
       "visualStrategy": "Strategy",
       "visualExecution": "Execution",
@@ -61,7 +61,7 @@
     },
     "process": {
       "eyebrow": "How we work",
-      "title": "Clear at every step. Flexible in execution.",
+      "title": "Clear at every step. Flexible in *execution.*",
       "description": "A straightforward process to understand, decide, create and improve without losing sight of your priorities.",
       "steps": {
         "discovery": {"title": "Discovery", "description": "We clarify your context, audiences, constraints and the purpose of the project."},
@@ -72,7 +72,7 @@
     },
     "audience": {
       "eyebrow": "Who we help",
-      "title": "Different needs. One standard of care.",
+      "title": "Different needs. One standard of *care.*",
       "description": "We work with businesses that want more coherence and impact from their digital presence.",
       "items": {
         "startups": {"title": "Startups", "description": "Shape a brand, launch an offer and establish strong digital foundations."},
@@ -83,7 +83,7 @@
     },
     "finalCta": {
       "eyebrow": "Your next move",
-      "title": "Let’s turn your ambition into a clear project.",
+      "title": "Let’s turn your ambition into a *clear project.*",
       "description": "Tell us about your business, your needs and what you want to move forward. We will respond with an initial direction shaped around your context.",
       "primaryCta": "Request a Free Quote"
     }
@@ -91,7 +91,7 @@
   "Services": {
     "hero": {
       "eyebrow": "Our digital services",
-      "title": "Every capability your digital presence needs to move forward.",
+      "title": "Every capability your digital presence needs to *move forward.*",
       "description": "Klick Trick brings strategy, creative, marketing and technology into one coherent engagement shaped around the needs of businesses in Morocco.",
       "cta": "Request a Free Quote",
       "visualLabel": "Klick Trick’s six capabilities organized around one shared digital vision"
@@ -99,6 +99,7 @@
     "navigationLabel": "Jump to a service category",
     "includesLabel": "This service can include",
     "serviceCta": "Discuss this need",
+    "explore": "Explore",
     "items": {
       "digitalMarketing": {
         "title": "Digital Marketing",
@@ -139,7 +140,7 @@
     },
     "closing": {
       "eyebrow": "A cross-disciplinary need?",
-      "title": "Let’s define the right scope for your project.",
+      "title": "Let’s define the right *scope* for your project.",
       "description": "Your needs may call for one capability or a combination of several. Share your context and we will help clarify an appropriate approach.",
       "cta": "Request a Free Quote"
     }
@@ -147,7 +148,7 @@
   "About": {
     "hero": {
       "eyebrow": "About Klick Trick",
-      "title": "A Moroccan agency built to connect ideas with execution.",
+      "title": "A Moroccan agency built to connect ideas with *execution.*",
       "description": "Klick Trick is a newly established, legally registered Moroccan digital agency created to support businesses with clarity, creativity and care.",
       "cta": "Discuss your project",
       "visualLabel": "Abstract composition representing the meeting of strategy, creativity and technology",
@@ -157,19 +158,19 @@
     },
     "introduction": {
       "eyebrow": "Our starting point",
-      "title": "Digital works better when its disciplines move together.",
+      "title": "Digital works better when its disciplines move *together.*",
       "description": "A strong brand without a useful experience, technology without strategy or a campaign without a coherent message always leaves potential behind. Klick Trick was created to bring these dimensions into one line of thinking, then turn them into understandable, achievable action."
     },
     "mission": {
       "eyebrow": "Our mission",
-      "title": "Help businesses move forward with clearer digital direction.",
+      "title": "Help businesses move forward with clearer digital *direction.*",
       "description": "We want digital expertise to feel more connected, more understandable and closer to the realities of Moroccan businesses.",
       "statement": "Understand before proposing. Connect before producing. Learn before adjusting.",
       "note": "Our role is not to add complexity, but to turn ambitions, constraints and opportunities into useful decisions."
     },
     "philosophy": {
       "eyebrow": "Our philosophy",
-      "title": "Substance guides the form.",
+      "title": "Substance guides the *form.*",
       "description": "Three principles shape the way we approach every collaboration.",
       "items": {
         "clarity": {"title": "Clarify", "description": "We begin by understanding the problem, audiences and priorities before selecting deliverables."},
@@ -179,7 +180,7 @@
     },
     "approach": {
       "eyebrow": "Creative and technological",
-      "title": "An integrated vision, not a collection of services.",
+      "title": "An integrated *vision,* not a collection of services.",
       "description": "We see every project as a system where strategy provides direction, creative work creates meaning and technology makes the experience possible.",
       "detail": "This lets us shape the right engagement: focused on one capability when that is enough, or cross-disciplinary when the project calls for several skills.",
       "cta": "Explore our services",
@@ -187,7 +188,7 @@
     },
     "values": {
       "eyebrow": "Our values",
-      "title": "Principles you can see in the work.",
+      "title": "Principles you can see in the *work.*",
       "description": "We want professional relationships to be straightforward, thoughtful and respectful of each business context.",
       "items": {
         "curiosity": {"title": "Curiosity", "description": "Ask better questions and look beyond the first available answer."},
@@ -198,7 +199,7 @@
     },
     "collaboration": {
       "eyebrow": "Working with us",
-      "title": "A clear framework, an ongoing conversation.",
+      "title": "A clear framework, an ongoing *conversation.*",
       "description": "Every project takes its own shape, but our way of working stays understandable from the beginning onward.",
       "steps": {
         "listen": {"title": "Listen", "description": "Understand your business, stakeholders and constraints."},
@@ -209,13 +210,13 @@
     },
     "audience": {
       "eyebrow": "Businesses we help",
-      "title": "An approach that adapts to different stages of growth.",
+      "title": "An approach that adapts to different stages of *growth.*",
       "description": "We support organizations that want to better organize, express or develop their digital presence.",
       "items": {"startups": "Startups", "ecommerce": "E-commerce businesses", "professionals": "Professionals", "companies": "Established companies"}
     },
     "closing": {
       "eyebrow": "Let’s get acquainted",
-      "title": "Your ambition deserves a clear conversation.",
+      "title": "Your ambition deserves a clear *conversation.*",
       "description": "Tell us about your context, what you want to improve and the next step you have in mind.",
       "cta": "Request a Free Quote"
     }
@@ -223,12 +224,12 @@
   "Contact": {
     "hero": {
       "eyebrow": "Start a project",
-      "title": "Let’s talk about your next digital step.",
+      "title": "Let’s talk about your next digital *step.*",
       "description": "Tell us about your context, what you need and what you want to move forward. We will use this information only to review your inquiry and respond."
     },
     "form": {
       "eyebrow": "Your inquiry",
-      "title": "Give us the essential details.",
+      "title": "Give us the essential *details.*",
       "description": "Fields marked with an asterisk are required. This form does not request payment or create a commitment.",
       "fields": {
         "firstName": "First name",

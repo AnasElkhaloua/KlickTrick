@@ -1,33 +1,28 @@
 import {getTranslations} from "next-intl/server";
-import {Container} from "@/components/ui/container";
 import {ButtonLink} from "@/components/ui/button";
 import {Link} from "@/i18n/navigation";
 import {navigationItems} from "@/content/navigation";
 import {Wordmark} from "./wordmark";
 import {LanguageSwitcher} from "./language-switcher";
 import {MobileNavigation} from "./mobile-navigation";
+import {NavLink} from "./nav-link";
 
 export async function SiteHeader() {
   const t = await getTranslations("Navigation");
   const items = navigationItems.map((item) => ({href: item.href, label: t(item.key)}));
 
   return (
-    <header className="relative z-50 border-b border-white/[0.06] bg-black/80 backdrop-blur-xl">
-      <Container className="flex min-h-20 items-center justify-between gap-6 lg:min-h-[108px]">
-        <Link href="/">
+    <header className="fixed inset-x-0 top-0 z-50 px-3 sm:px-4">
+      <div className="site-header-inner relative mx-auto flex h-16 items-center justify-between gap-6 px-4 sm:px-6 lg:h-[68px]">
+        <Link href="/" className="rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-blue)]">
           <Wordmark />
         </Link>
 
-        <nav aria-label={t("primaryNavigation")} className="hidden lg:block">
-          <ul className="flex items-center gap-8 xl:gap-11">
+        <nav aria-label={t("primaryNavigation")} className="absolute left-1/2 hidden -translate-x-1/2 lg:block">
+          <ul className="flex items-center gap-8">
             {items.map((item) => (
               <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="text-sm font-medium text-[var(--color-muted)] transition hover:text-white focus-visible:rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-mint)]"
-                >
-                  {item.label}
-                </Link>
+                <NavLink href={item.href}>{item.label}</NavLink>
               </li>
             ))}
           </ul>
@@ -37,7 +32,7 @@ export async function SiteHeader() {
           <div className="hidden sm:block">
             <LanguageSwitcher label={t("language")} />
           </div>
-          <ButtonLink href={{pathname: "/contact", hash: "contact-form"}} variant="secondary" className="max-xl:!hidden">
+          <ButtonLink href={{pathname: "/contact", hash: "contact-form"}} className="min-h-9 px-4 text-[13px] max-lg:!hidden">
             {t("quote")}
           </ButtonLink>
           <MobileNavigation
@@ -49,7 +44,7 @@ export async function SiteHeader() {
             languageLabel={t("language")}
           />
         </div>
-      </Container>
+      </div>
     </header>
   );
 }

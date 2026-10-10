@@ -23,7 +23,7 @@ export function LanguageSwitcher({label}: {label: string}) {
           hrefLang={item}
           aria-current={locale === item ? "true" : undefined}
           className={cn(
-            "rounded-full px-2.5 py-1.5 text-xs font-semibold uppercase tracking-[0.08em] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-mint)]",
+            "rounded-full px-2.5 py-1.5 text-xs font-semibold uppercase tracking-[0.08em] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-blue)]",
             locale === item
               ? "bg-white text-black"
               : "text-[var(--color-muted)] hover:text-white"

@@ -38,7 +38,7 @@ export function MobileNavigation({items, openLabel, closeLabel, quoteLabel, navi
       <button
         ref={triggerRef}
         type="button"
-        className="grid size-11 place-items-center rounded-full border border-white/25 text-white transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-mint)]"
+        className="grid size-11 place-items-center rounded-full border border-white/25 text-white transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-blue)]"
         aria-expanded={open}
         aria-controls="mobile-navigation"
         aria-label={open ? closeLabel : openLabel}
@@ -54,7 +54,7 @@ export function MobileNavigation({items, openLabel, closeLabel, quoteLabel, navi
       {open ? (
         <div
           id="mobile-navigation"
-          className="absolute inset-x-5 top-[calc(100%+0.75rem)] rounded-[28px] border border-white/10 bg-[#0b1115]/[0.98] p-4 shadow-2xl shadow-black/50 backdrop-blur-xl sm:inset-x-8"
+          className="absolute inset-x-5 top-[calc(100%+0.75rem)] rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface)]/[0.98] p-4 shadow-2xl shadow-black/50 backdrop-blur-xl sm:inset-x-8"
         >
           <nav aria-label={navigationLabel}>
             <ul className="grid gap-1">
@@ -63,7 +63,7 @@ export function MobileNavigation({items, openLabel, closeLabel, quoteLabel, navi
                   <Link
                     href={item.href}
                     onClick={() => setOpen(false)}
-                    className="block rounded-2xl px-4 py-3 text-base font-medium text-white transition hover:bg-white/8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-mint)]"
+                    className="block rounded-2xl px-4 py-3 text-base font-medium text-white transition hover:bg-white/8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-blue)]"
                   >
                     {item.label}
                   </Link>

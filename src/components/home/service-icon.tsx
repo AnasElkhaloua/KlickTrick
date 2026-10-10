@@ -11,8 +11,8 @@ const paths: Record<ServiceIconName, React.ReactNode> = {
 
 export function ServiceIcon({name}: {name: ServiceIconName}) {
   return (
-    <span className="grid size-14 place-items-center rounded-xl bg-[var(--color-blue)] text-black transition duration-300 group-hover:scale-105 group-hover:bg-[var(--color-mint)] motion-reduce:transform-none" aria-hidden="true">
-      <svg viewBox="0 0 24 24" className="size-7" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <span className="grid size-12 place-items-center text-white transition duration-300 group-hover:-translate-y-0.5 group-hover:text-[var(--color-blue)] motion-reduce:transform-none" aria-hidden="true">
+      <svg viewBox="0 0 24 24" className="size-7" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         {paths[name]}
       </svg>
     </span>

@@ -25,7 +25,7 @@
   "Home": {
     "hero": {
       "eyebrow": "Agence digitale full-service au Maroc",
-      "title": "Une agence. Toutes vos ambitions digitales.",
+      "title": "Une agence. Toutes vos ambitions *digitales.*",
       "description": "Klick Trick accompagne les entreprises marocaines avec une approche qui réunit stratégie, créativité, technologie et croissance durable.",
       "primaryCta": "Demander un devis gratuit",
       "secondaryCta": "Découvrir nos services",
@@ -33,7 +33,7 @@
     },
     "services": {
       "eyebrow": "Nos expertises",
-      "title": "Six expertises. Une seule vision digitale.",
+      "title": "Six expertises. Une seule vision *digitale.*",
       "description": "De la stratégie à l’exécution, nous réunissons les compétences utiles pour construire une présence cohérente et faire avancer votre entreprise.",
       "cardCta": "Découvrir l’expertise",
       "allCta": "Explorer tous nos services",
@@ -48,7 +48,7 @@
     },
     "why": {
       "eyebrow": "Pourquoi Klick Trick",
-      "title": "Une équipe connectée à toute votre ambition.",
+      "title": "Une équipe *connectée* à toute votre ambition.",
       "description": "Nous relions conseil, création et technologie pour éviter les actions isolées et garder chaque décision alignée sur votre réalité.",
       "visualStrategy": "Stratégie",
       "visualExecution": "Exécution",
@@ -61,7 +61,7 @@
     },
     "process": {
       "eyebrow": "Notre méthode",
-      "title": "Clairs à chaque étape. Flexibles dans l’exécution.",
+      "title": "Clairs à chaque étape. Flexibles dans *l’exécution.*",
       "description": "Un processus simple pour comprendre, décider, créer et améliorer sans perdre de vue vos priorités.",
       "steps": {
         "discovery": {"title": "Découverte", "description": "Nous clarifions votre contexte, vos publics, vos contraintes et l’objectif du projet."},
@@ -72,7 +72,7 @@
     },
     "audience": {
       "eyebrow": "Pour qui",
-      "title": "Des besoins différents. Une exigence commune.",
+      "title": "Des besoins différents. Une exigence *commune.*",
       "description": "Nous travaillons avec des entreprises qui veulent donner plus de cohérence et d’impact à leur présence digitale.",
       "items": {
         "startups": {"title": "Startups", "description": "Structurer une marque, lancer une offre et installer des fondations digitales solides."},
@@ -83,7 +83,7 @@
     },
     "finalCta": {
       "eyebrow": "Votre prochaine étape",
-      "title": "Transformons votre ambition en projet clair.",
+      "title": "Transformons votre ambition en *projet clair.*",
       "description": "Parlez-nous de votre entreprise, de votre besoin et de ce que vous souhaitez faire avancer. Nous vous répondrons avec une première orientation adaptée.",
       "primaryCta": "Demander un devis gratuit"
     }
@@ -91,7 +91,7 @@
   "Services": {
     "hero": {
       "eyebrow": "Nos services digitaux",
-      "title": "Toutes les expertises pour faire avancer votre présence digitale.",
+      "title": "Toutes les expertises pour faire avancer votre présence *digitale.*",
       "description": "Klick Trick réunit stratégie, création, marketing et technologie dans un accompagnement cohérent, adapté aux besoins des entreprises au Maroc.",
       "cta": "Demander un devis gratuit",
       "visualLabel": "Les six expertises de Klick Trick organisées autour d’une vision digitale commune"
@@ -99,6 +99,7 @@
     "navigationLabel": "Accéder aux catégories de services",
     "includesLabel": "Ce service peut inclure",
     "serviceCta": "Discuter de ce besoin",
+    "explore": "Découvrir",
     "items": {
       "digitalMarketing": {
         "title": "Marketing digital",
@@ -139,7 +140,7 @@
     },
     "closing": {
       "eyebrow": "Un besoin transversal ?",
-      "title": "Construisons le bon périmètre pour votre projet.",
+      "title": "Construisons le bon *périmètre* pour votre projet.",
       "description": "Votre besoin peut mobiliser une expertise ou en combiner plusieurs. Présentez-nous votre contexte et nous vous aiderons à clarifier une approche adaptée.",
       "cta": "Demander un devis gratuit"
     }
@@ -147,7 +148,7 @@
   "About": {
     "hero": {
       "eyebrow": "À propos de Klick Trick",
-      "title": "Une agence marocaine pensée pour relier les idées à l’exécution.",
+      "title": "Une agence marocaine pensée pour relier les idées à *l’exécution.*",
       "description": "Klick Trick est une agence digitale marocaine nouvellement établie et légalement enregistrée, créée pour accompagner les entreprises avec clarté, créativité et exigence.",
       "cta": "Parler de votre projet",
       "visualLabel": "Composition abstraite représentant la rencontre entre stratégie, créativité et technologie",
@@ -157,19 +158,19 @@
     },
     "introduction": {
       "eyebrow": "Notre point de départ",
-      "title": "Le digital fonctionne mieux quand ses disciplines avancent ensemble.",
+      "title": "Le digital fonctionne mieux quand ses disciplines avancent *ensemble.*",
       "description": "Une marque forte sans expérience utile, une technologie sans stratégie ou une campagne sans message cohérent laissent toujours une partie du potentiel de côté. Klick Trick a été pensée pour réunir ces dimensions dans une même réflexion, puis les transformer en actions compréhensibles et réalisables."
     },
     "mission": {
       "eyebrow": "Notre mission",
-      "title": "Aider les entreprises à avancer avec une direction digitale plus claire.",
+      "title": "Aider les entreprises à avancer avec une direction digitale plus *claire.*",
       "description": "Nous voulons rendre l’expertise digitale plus connectée, plus lisible et plus proche des réalités des entreprises marocaines.",
       "statement": "Comprendre avant de proposer. Relier avant de produire. Apprendre avant d’ajuster.",
       "note": "Notre rôle n’est pas d’ajouter de la complexité, mais de transformer des ambitions, contraintes et opportunités en décisions utiles."
     },
     "philosophy": {
       "eyebrow": "Notre philosophie",
-      "title": "Le fond guide la forme.",
+      "title": "Le fond guide la *forme.*",
       "description": "Trois principes structurent notre manière d’aborder chaque collaboration.",
       "items": {
         "clarity": {"title": "Clarifier", "description": "Nous commençons par comprendre le problème, les publics et les priorités avant de choisir les livrables."},
@@ -179,7 +180,7 @@
     },
     "approach": {
       "eyebrow": "Créatif et technologique",
-      "title": "Une vision intégrée, pas une collection de prestations.",
+      "title": "Une *vision* intégrée, pas une collection de prestations.",
       "description": "Nous considérons chaque projet comme un système où la stratégie donne la direction, la création donne du sens et la technologie rend l’expérience possible.",
       "detail": "Cette approche nous permet de composer un accompagnement adapté : concentré sur une expertise lorsque c’est suffisant, ou transversal lorsque le projet demande plusieurs compétences.",
       "cta": "Découvrir nos services",
@@ -187,7 +188,7 @@
     },
     "values": {
       "eyebrow": "Nos valeurs",
-      "title": "Des principes visibles dans le travail.",
+      "title": "Des principes visibles dans le *travail.*",
       "description": "Nous voulons construire des relations professionnelles simples, exigeantes et respectueuses du contexte de chacun.",
       "items": {
         "curiosity": {"title": "Curiosité", "description": "Poser les bonnes questions et regarder au-delà de la première réponse."},
@@ -198,7 +199,7 @@
     },
     "collaboration": {
       "eyebrow": "Collaborer avec nous",
-      "title": "Un cadre clair, une conversation continue.",
+      "title": "Un cadre clair, une conversation *continue.*",
       "description": "Chaque projet garde sa propre forme, mais notre manière de travailler reste lisible du début à la suite.",
       "steps": {
         "listen": {"title": "Écouter", "description": "Comprendre votre entreprise, vos interlocuteurs et vos contraintes."},
@@ -209,13 +210,13 @@
     },
     "audience": {
       "eyebrow": "Les entreprises que nous aidons",
-      "title": "Une approche adaptable à différents moments de croissance.",
+      "title": "Une approche adaptable à différents moments de *croissance.*",
       "description": "Nous accompagnons les structures qui souhaitent mieux organiser, exprimer ou développer leur présence digitale.",
       "items": {"startups": "Startups", "ecommerce": "Entreprises e-commerce", "professionals": "Professionnels", "companies": "Entreprises établies"}
     },
     "closing": {
       "eyebrow": "Faisons connaissance",
-      "title": "Votre ambition mérite une conversation claire.",
+      "title": "Votre ambition mérite une conversation *claire.*",
       "description": "Parlez-nous de votre contexte, de ce que vous souhaitez améliorer et de la prochaine étape que vous imaginez.",
       "cta": "Demander un devis gratuit"
     }
@@ -223,12 +224,12 @@
   "Contact": {
     "hero": {
       "eyebrow": "Démarrer un projet",
-      "title": "Parlons de votre prochaine étape digitale.",
+      "title": "Parlons de votre prochaine étape *digitale.*",
       "description": "Présentez-nous votre contexte, votre besoin et ce que vous souhaitez faire avancer. Nous utiliserons ces informations uniquement pour étudier votre demande et vous répondre."
     },
     "form": {
       "eyebrow": "Votre demande",
-      "title": "Donnez-nous les premiers éléments.",
+      "title": "Donnez-nous les premiers *éléments.*",
       "description": "Les champs marqués d’un astérisque sont requis. Aucun paiement ni engagement n’est demandé avec ce formulaire.",
       "fields": {
         "firstName": "Prénom",

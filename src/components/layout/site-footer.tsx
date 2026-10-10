@@ -3,6 +3,7 @@ import {Container} from "@/components/ui/container";
 import {Link} from "@/i18n/navigation";
 import {navigationItems} from "@/content/navigation";
 import {serviceCategories} from "@/content/services";
+import {SocialIcon} from "./social-icon";
 import {LanguageSwitcher} from "./language-switcher";
 
 const linkClass = "text-sm text-white/80 transition hover:text-white focus-visible:rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-blue)]";
@@ -27,6 +28,13 @@ export async function SiteFooter() {
             <div className="sm:pl-0">
               <p className="max-w-xs text-sm leading-6 text-[var(--color-muted)]">{footer("tagline")}</p>
               <p className="mt-2 text-xs text-white/40">{footer("provisional")}</p>
+              <div className="mt-5 flex items-center gap-2">
+                {(["Instagram", "TikTok", "X", "LinkedIn"] as const).map((name) => (
+                  <a key={name} href={name === "Instagram" ? "https://www.instagram.com/klicktrickagency/" : "#"} aria-label={name} className="grid size-10 place-items-center rounded-full border border-[var(--color-line)] text-[var(--color-muted)] transition-colors hover:border-[var(--color-blue)]/50 hover:text-[var(--color-blue)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-blue)]">
+                    <SocialIcon name={name} />
+                  </a>
+                ))}
+              </div>
               <div className="mt-6"><LanguageSwitcher label={navigation("language")} /></div>
             </div>
 

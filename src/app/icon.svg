@@ -1,11 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Klick Trick provisional icon">
-  <defs>
-    <linearGradient id="accent" x1="0" x2="1">
-      <stop offset="0" stop-color="#75f8d2"/>
-      <stop offset="0.5" stop-color="#56a6d8"/>
-      <stop offset="1" stop-color="#75f8d2"/>
-    </linearGradient>
-  </defs>
-  <rect width="64" height="64" rx="18" fill="url(#accent)"/>
-  <text x="32" y="39" fill="#000" font-family="Arial, sans-serif" font-size="21" font-weight="700" text-anchor="middle">KT</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Klick Trick">
+  <rect width="64" height="64" rx="16" fill="#f4f4f5"/>
+  <path d="M18 23h2v9l8-9h2.7l-8.1 9 8.6 10h-2.8L20 32.3V42h-2V23Zm14 0h16v2h-7v17h-2V25h-7v-2Z" fill="#030304"/>
 </svg>
